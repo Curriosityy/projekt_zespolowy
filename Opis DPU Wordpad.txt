@@ -1,0 +1,182 @@
+Wstêp 
+Pre¿nie rozwijaj¹ce sie przedsiêbiorstwo "JanuszWare" prowadzone przez Janusza Pracza
+które zajumue siê napraw¹ komputerow, poprosi³o nasz¹ grupê o napisanie aplikacji
+wspomagaj¹cej zarz¹dzanie prac¹ serwisantów. Poprzez nat³ok zg³oszeñ o psuj¹cych siê
+komputerach i zwiêkszenie kadry pracowniczej, organizacja w firmie znacz¹co zmala³a. Nasz program ma za zadanie poprawiæ organizacjê pracy w przedsiêbiorstwie i usprawniæ zarz¹dzanie firm¹. 
+
+Wymagania funkcjonalne:
+	-Logowanie.
+	-<cru> pracowników.
+	-<cru> naprawy
+	-google maps api do lokalizacji klientów.
+	-wyliczanie premii.
+	-<crud> magazynu czêœci komputerowych.
+	-<cru> klientów.
+	-autouzupe³nianie pól podczas dodawania naprawy.
+	-wyœwietlanie braków w magazynie.
+	-generowanie raportów dnia
+Wymagania niefunkcjonalne:
+	-Has³o u¿ytkowników musi byæ odpowiedno silne(8 znaków, 1 du¿a litera, jeden znaczek alfanumeryczny)
+	-niezawodnoœæ.
+	-system dzia³a na œrodowisku Windows.
+	-Interfejs musi byæ prosty i intuicyjny 
+
+Opis przypadku u¿ycia "Logowanie": 
+1. Programista: Damian Bajno
+2. Aktorzy: 
+- Szef
+- Serwisant
+- Sekretarka
+- Administrator
+3. Krótki opis: 
+	Logowanie siê do systemu.
+4. Warunki wstêpne: 
+	Osoba musi istnieæ w systemie
+5. Warunki koñcowe:
+	System odnotowuje osobê jako zalogowana.
+6. G³ówny przep³yw zdarzeñ:
+?	Osoba wype³nia formularz danymi potrzebnymi do logowania.
+?	Osoba akceptuje formularz.
+?	Poprawnie zalogowano do systemu, osoba zostanie przeniesiona do panelu odpowiadaj¹cego jej uprawnieniom.
+7. Alternatywny przep³yw zdarzeñ:
+	 System wyœwietla komunikat o b³êdnych danych.
+	 Osoba anuluje logowanie.
+	 B³¹d podczas logowania.
+
+Opis przypadku u¿ycia "Dodaj zg³oszenie": 
+1. Programista: Damian Bajno
+2. Aktorzy:
+- Sekretarka
+
+3. Krótki opis: 
+	Dodawanie zg³oszenia do systemu.
+4. Warunki wstêpne: 
+	Zg³oszenie awarii przez kilenta telefonicznie lub w biurze.
+5. Warunki koñcowe:
+	System zapisuje zg³oszenie w systemie.
+6. G³ówny przep³yw zdarzeñ:
+?	Sekretarka wype³nia formularz danymi potrzebnymi do dodania zg³oszenia.
+?	Sekretarka akceptuje wype³niony formularz.
+?	Zg³oszenie zostaje poprawnie dodane do systemu, sekretarka zostanie przeniesiona do listy zg³oszeñ.
+7. Alternatywny przep³yw zdarzeñ:
+	 System wyœwietla komunikat o b³êdnych danych.
+	 Sekratarka anuluje dodawanie zg³oszenia.
+	 B³¹d podczas dodawania zg³oszenia.
+
+Opis przypadku u¿ycia "Zakoñcz zg³oszenie": 
+1. Programista: Damian Bajno
+2. Aktorzy: 
+- Serwisant
+
+3. Krótki opis: 
+	Status zg³oszenia zmienia siê na "ukoñczone".
+4. Warunki wstêpne: 
+	Zg³oszenie musi istnieæ.
+	Zg³oszenie musi byæ wykonane.  
+5. Warunki koñcowe:
+	System odnotowuje zmianê statusu zg³oszenia.
+6. G³ówny przep³yw zdarzeñ:
+?	Serwisant wybiera zg³oszenie z listy odebranych przez niego zg³oszeñ i zatwierdza przyciskiem jego ukoñczenie po zatwierdzeniu pojawia siê formularz bêd¹cy raportem, który nale¿y uzupe³niæ by zakoñczyæ zg³oszenie.
+?	Poprawnie zmieniono status zg³oszenia, zmiana zostaje odnotowana w systemie.
+7. Alternatywny przep³yw zdarzeñ:
+	 Osoba cofa zmianê statusu zg³oszenia.
+	 Osoba wprowadzi³a b³êdne dane o czym informuje komunikat.
+	 B³¹d podczas zmiany statusu zg³oszenia.
+
+Opis przypadku u¿ycia "Odbierz wiadomoœæ": 
+1. Programista: Damian Bajno
+2. Aktorzy: 
+- Szef
+3. Krótki opis: 
+	Odbieranie wiadomoœci od u¿ytkowników systemu.
+4. Warunki wstêpne: 
+	Skrzynka pocztowa nie mo¿e byæ pusta.
+5. Warunki koñcowe:
+	Odczyt wiadomoœci przes³anych przez u¿ytkowników.
+6. G³ówny przep³yw zdarzeñ:
+?	Szef klika przycisk "Skrzynka pocztowa".
+?	Szef dokonuje wyboru wiadomoœci, które chce odczytaæ poprzez klikniêcie w ni¹.
+?	Wiadomoœæ zostaje oznaczona jako przeczytana, a informacja o tym zapisana w systemie.
+7. Alternatywny przep³yw zdarzeñ:
+	 System wyœwietla komunikat o braku nowych wiadomoœci.
+	 B³¹d podczas wczytywania wiadomoœci.
+
+Opis przypadku u¿ycia "Wyœwietl braki": 
+1. Programista: Damian Bajno
+2. Aktorzy: 
+- Szef
+- Serwisant
+
+3. Krótki opis: 
+	System wyœwietla czêœci, których brakuje w magazynie. 
+4. Warunki wstêpne: 
+	Brak danej czêœci w magazynie.
+5. Warunki koñcowe:
+	System reaguje na polecenie i wyœwietla wynik rz¹danej operacji.	
+6. G³ówny przep³yw zdarzeñ:
+?	Osoba klika przycisk w panelu "Wyœwietl braki"
+?	System w wyniku tej operacji zwraca okno z czêœciami, których brak w magazynie.
+7. Alternatywny przep³yw zdarzeñ:
+	 System wyœwietla komunikat o braku braków.
+	 B³¹d systemu podczas wykonywania rz¹danych operacji .
+
+Opis przypadku u¿ycia "Wyp³aæ premie": 
+1. Programista: Damian Bajno
+2. Aktorzy: 
+- Szef
+3. Krótki opis: 
+	Przyznanie dodatkowego wynagrodzenia do sta³ej pensji pracownika.
+4. Warunki wstêpne: 
+	Minimalna iloœæ ukoñczonych zg³oszeñ musi wynosiæ 45.
+5. Warunki koñcowe:
+	System zapisuje informacje o przyznanej premii.
+6. G³ówny przep³yw zdarzeñ:
+?	Szef klika przycisk "Przyznaj premie", system wyœwietla komunikat "Czy chcesz potwierdziæ operajcê?" oczekuj¹c na zatwierdzenie.
+?	Premia jest wyliczana przez system na podstawie algorytmu.
+?	System dolicza premie do wyp³aty Serwisanta.
+
+7. Alternatywny przep³yw zdarzeñ:
+	 ", system wyœwietla komunikat "Czy chcesz potwierdziæ operajcê?" oczekuj¹c na zatwierdzenie lub odrzucenie.
+	Szef odrzuca komunikat generowany przez system i anuluje przyznanie premii.
+	 B³¹d podczas wykonywania algorytmu o czym poinformuje komunikat.
+	 B³¹d w trakcie egzekwowania operacji.
+
+Opis przypadku u¿ycia "SprawdŸ magazyn": 
+1. Programista: Damian Bajno
+2. Aktorzy: 
+- Szef
+- Serwisant
+3. Krótki opis: 
+	Wyœwietlenie aktualnego stanu magazynu. 
+4. Warunki wstêpne: 
+	Magazyn musi istnieæ.
+5. Warunki koñcowe:
+	System egzekwuje polecenie i zwraca jego wynik na ekran.	
+6. G³ówny przep³yw zdarzeñ:
+?	Osoba zatwierdza przycisk "SprawdŸ magazyn" klikniêciem.
+?	System wyœwietla w oknie czêœci znajduj¹ce siê w magazynie oraz ich liczbê.
+
+7. Alternatywny przep³yw zdarzeñ:
+	 System wyœwietla komunikat o pustym magazynie.
+	 B³¹d podczas wykonywania operacji.
+
+Opis przypadku u¿ycia "Dodaj klienta": 
+1. Programista: Damian Bajno
+2. Aktorzy: 
+- Sekretarka
+
+3. Krótki opis: 
+	Dodawanie klienta do systemu.
+4. Warunki wstêpne: 
+	Klient posiadaæ wymagane dane.
+5. Warunki koñcowe:
+	System dodaje dane klienta do bazy danych.
+6. G³ówny przep³yw zdarzeñ:
+?	Sekretarka wype³nia formularz danymi uzyskanymi od klienta i potrzebnymi do jego rejestracji.
+?	Sekretarka akceptuje formularz.
+?	Poprawnie dodano do systemu, Sekratarka zostanie przeniesiona do listy klientów.
+7. Alternatywny przep³yw zdarzeñ:
+	 System wyœwietla komunikat o b³êdnych danych.
+	 Sekratarka anuluje dodawanie klienta.
+	 B³¹d podczas dodawania nowego klienta do bazy danych.
+
