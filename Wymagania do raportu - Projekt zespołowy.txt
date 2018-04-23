@@ -1,0 +1,7 @@
+Raport: 
+-opis zadania - wymagania klient
+-wymagania funkcjonalne i niefunkcjonalne
+-opis grup uzytkownikow
+-diagram DPU
+-scenariusz przypadkow uzycia
+-analiza spelnienia "wymagan" - krotkie podsumowanie
