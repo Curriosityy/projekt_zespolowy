@@ -1,6 +1,6 @@
 ﻿namespace projekt_zespolowy
 {
-    partial class Sekretarka
+    partial class MagazynSzef
     {
         /// <summary>
         /// Required designer variable.
@@ -32,78 +32,56 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(17, 40);
+            this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.Size = new System.Drawing.Size(143, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Dodaj klienta";
+            this.button1.Text = "Stan magazynu";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(17, 69);
+            this.button2.Location = new System.Drawing.Point(12, 41);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 23);
+            this.button2.Size = new System.Drawing.Size(143, 23);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Aktualizuj dane klienta";
+            this.button2.Text = "Dodaj część do magazynu";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(17, 98);
+            this.button3.Location = new System.Drawing.Point(12, 70);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 23);
+            this.button3.Size = new System.Drawing.Size(143, 23);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Dodaj zgłoszenie";
+            this.button3.Text = "Usuń część z magazynu";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(17, 174);
+            this.button4.Location = new System.Drawing.Point(12, 99);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 23);
+            this.button4.Size = new System.Drawing.Size(143, 23);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Wyloguj się";
+            this.button4.Text = "Wyświetl braki";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(17, 128);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Wyślij wiadomość";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 23);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Sekretarka";
-            // 
-            // Sekretarka
+            // MagazynSzef
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(188, 206);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button5);
+            this.ClientSize = new System.Drawing.Size(165, 136);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Sekretarka";
-            this.Text = "Sekretarka";
+            this.Name = "MagazynSzef";
+            this.Text = "MagazynSzef";
+            this.Load += new System.EventHandler(this.MagazynSzef_Load);
             this.ResumeLayout(false);
 
         }
@@ -114,7 +92,5 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label1;
     }
 }
