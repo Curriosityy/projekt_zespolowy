@@ -10,18 +10,25 @@ using System.Windows.Forms;
 
 namespace projekt_zespolowy
 {
-    public partial class Administrator : Form
+    public partial class MagazynSerwisant : Form
     {
-        public Administrator()
+        public MagazynSerwisant()
         {
             InitializeComponent();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Serwisant ok = new Serwisant();
+            ok.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Logowanie ok = new Logowanie();
-            ok.Show();
+            StanMagazynu st = new StanMagazynu();
+            st.Show();
         }
     }
 }

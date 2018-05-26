@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace projekt_zespolowy
 {
-    public partial class Administrator : Form
+    public partial class ZakonczZgloszenie : Form
     {
-        public Administrator()
+        public ZakonczZgloszenie()
         {
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Logowanie ok = new Logowanie();
+            Serwisant ok = new Serwisant();
             ok.Show();
         }
     }

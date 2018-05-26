@@ -34,5 +34,12 @@ namespace projekt_zespolowy
             WyświetlBraki ok = new WyświetlBraki();
             ok.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Szef ok = new Szef();
+            ok.Show();
+        }
     }
 }
