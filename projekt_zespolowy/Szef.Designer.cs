@@ -41,6 +41,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
@@ -59,6 +60,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Wyloguj się";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -77,6 +79,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Skrzynka pocztowa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -95,6 +98,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Sprawdź magazyn";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -111,10 +115,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(170, 206);
+            this.ClientSize = new System.Drawing.Size(207, 222);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "Szef";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Szef";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

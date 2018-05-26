@@ -34,7 +34,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
@@ -43,10 +42,11 @@
             this.textBoxStreet = new System.Windows.Forms.TextBox();
             this.textBoxAdressNumber = new System.Windows.Forms.TextBox();
             this.textBoxPostCode = new System.Windows.Forms.TextBox();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBox_numberTel = new System.Windows.Forms.TextBox();
             this.add_client = new System.Windows.Forms.Button();
             this.exit_add_client = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -70,7 +70,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(191, 153);
+            this.label3.Location = new System.Drawing.Point(191, 175);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 2;
@@ -102,15 +102,6 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Nr domu/mieszkania:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 160);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "E-mail: ";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -123,7 +114,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 135);
+            this.label9.Location = new System.Drawing.Point(12, 160);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 13);
             this.label9.TabIndex = 8;
@@ -166,17 +157,10 @@
             // 
             // textBoxPostCode
             // 
-            this.textBoxPostCode.Location = new System.Drawing.Point(125, 130);
+            this.textBoxPostCode.Location = new System.Drawing.Point(125, 155);
             this.textBoxPostCode.Name = "textBoxPostCode";
             this.textBoxPostCode.Size = new System.Drawing.Size(100, 20);
             this.textBoxPostCode.TabIndex = 14;
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Location = new System.Drawing.Point(125, 155);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEmail.TabIndex = 15;
             // 
             // textBox_numberTel
             // 
@@ -187,31 +171,50 @@
             // 
             // add_client
             // 
-            this.add_client.Location = new System.Drawing.Point(150, 206);
+            this.add_client.Location = new System.Drawing.Point(144, 207);
             this.add_client.Name = "add_client";
             this.add_client.Size = new System.Drawing.Size(81, 23);
             this.add_client.TabIndex = 17;
             this.add_client.Text = "Dodaj klienta";
             this.add_client.UseVisualStyleBackColor = true;
+            this.add_client.Click += new System.EventHandler(this.add_client_Click);
             // 
             // exit_add_client
             // 
-            this.exit_add_client.Location = new System.Drawing.Point(44, 206);
+            this.exit_add_client.Location = new System.Drawing.Point(44, 207);
             this.exit_add_client.Name = "exit_add_client";
             this.exit_add_client.Size = new System.Drawing.Size(75, 23);
             this.exit_add_client.TabIndex = 18;
             this.exit_add_client.Text = "Wyjście";
             this.exit_add_client.UseVisualStyleBackColor = true;
+            this.exit_add_client.Click += new System.EventHandler(this.exit_add_client_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 135);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Numer lokalu:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(125, 130);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 20;
             // 
             // DodawanieKlienta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(268, 241);
+            this.ClientSize = new System.Drawing.Size(268, 244);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.exit_add_client);
             this.Controls.Add(this.add_client);
             this.Controls.Add(this.textBox_numberTel);
-            this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.textBoxPostCode);
             this.Controls.Add(this.textBoxAdressNumber);
             this.Controls.Add(this.textBoxStreet);
@@ -220,7 +223,6 @@
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -228,6 +230,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DodawanieKlienta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DodawanieKlienta";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -242,7 +245,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxName;
@@ -251,9 +253,10 @@
         private System.Windows.Forms.TextBox textBoxStreet;
         private System.Windows.Forms.TextBox textBoxAdressNumber;
         private System.Windows.Forms.TextBox textBoxPostCode;
-        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBox_numberTel;
         private System.Windows.Forms.Button add_client;
         private System.Windows.Forms.Button exit_add_client;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

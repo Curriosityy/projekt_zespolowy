@@ -44,6 +44,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Dodaj klienta";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -62,6 +63,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Dodaj zgłoszenie";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -71,6 +73,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Wyloguj się";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -95,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(188, 206);
+            this.ClientSize = new System.Drawing.Size(235, 206);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -103,6 +106,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Sekretarka";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sekretarka";
             this.ResumeLayout(false);
 

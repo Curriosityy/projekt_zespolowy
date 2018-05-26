@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DodajZgłoszenie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajZgłoszenie.Designer.cs">
+      <DependentUpon>DodajZgłoszenie.cs</DependentUpon>
+    </Compile>
     <Compile Include="DodawanieKlienta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     <Compile Include="MagazynSzef.Designer.cs">
       <DependentUpon>MagazynSzef.cs</DependentUpon>
     </Compile>
+    <Compile Include="message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="message.Designer.cs">
+      <DependentUpon>message.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sekretarka.cs">
@@ -84,14 +96,29 @@
     <Compile Include="Serwisant.Designer.cs">
       <DependentUpon>Serwisant.cs</DependentUpon>
     </Compile>
+    <Compile Include="StanMagazynu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StanMagazynu.Designer.cs">
+      <DependentUpon>StanMagazynu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Szef.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Szef.Designer.cs">
       <DependentUpon>Szef.cs</DependentUpon>
     </Compile>
+    <Compile Include="WyświetlBraki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WyświetlBraki.Designer.cs">
+      <DependentUpon>WyświetlBraki.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Administrator.resx">
       <DependentUpon>Administrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajZgłoszenie.resx">
+      <DependentUpon>DodajZgłoszenie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DodawanieKlienta.resx">
       <DependentUpon>DodawanieKlienta.cs</DependentUpon>
@@ -101,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MagazynSzef.resx">
       <DependentUpon>MagazynSzef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="message.resx">
+      <DependentUpon>message.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -117,8 +147,14 @@
     <EmbeddedResource Include="Serwisant.resx">
       <DependentUpon>Serwisant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StanMagazynu.resx">
+      <DependentUpon>StanMagazynu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Szef.resx">
       <DependentUpon>Szef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WyświetlBraki.resx">
+      <DependentUpon>WyświetlBraki.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

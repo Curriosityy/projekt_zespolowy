@@ -19,7 +19,20 @@ namespace projekt_zespolowy
 
         private void MagazynSzef_Load(object sender, EventArgs e)
         {
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StanMagazynu sm = new StanMagazynu();
+            sm.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            WyświetlBraki ok = new WyświetlBraki();
+            ok.Show();
         }
     }
 }

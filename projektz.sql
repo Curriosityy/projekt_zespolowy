@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2018 at 01:32 PM
+-- Generation Time: May 25, 2018 at 07:47 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -134,7 +134,7 @@ CREATE TABLE `zgloszenie` (
   `id` int(11) NOT NULL,
   `id_prac` int(11) NOT NULL,
   `id_klienta` int(11) NOT NULL,
-  `koszt` decimal(10,2) NOT NULL COMMENT 'koszt przeprowadzonej naprawy',
+  `koszt` decimal(10,2) DEFAULT NULL COMMENT 'koszt przeprowadzonej naprawy',
   `opis` text NOT NULL,
   `data1` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `data2` datetime NOT NULL,
@@ -181,7 +181,8 @@ ALTER TABLE `producent`
 -- Indexes for table `produkt`
 --
 ALTER TABLE `produkt`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_producenta` (`id_producenta`);
 
 --
 -- Indexes for table `raport`
@@ -193,25 +194,33 @@ ALTER TABLE `raport`
 -- Indexes for table `raport_zgloszenie`
 --
 ALTER TABLE `raport_zgloszenie`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_raportu` (`id_raportu`),
+  ADD KEY `id_zgloszenia` (`id_zgloszenia`);
 
 --
 -- Indexes for table `wiadomosc`
 --
 ALTER TABLE `wiadomosc`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_prac2` (`id_prac2`),
+  ADD KEY `id_prac1` (`id_prac1`);
 
 --
 -- Indexes for table `zgloszenie`
 --
 ALTER TABLE `zgloszenie`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_prac` (`id_prac`),
+  ADD KEY `id_klienta` (`id_klienta`);
 
 --
 -- Indexes for table `zgloszenie_produkt`
 --
 ALTER TABLE `zgloszenie_produkt`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_produktu` (`id_produktu`),
+  ADD KEY `id_zgloszenia` (`id_zgloszenia`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -257,6 +266,44 @@ ALTER TABLE `zgloszenie`
 --
 ALTER TABLE `zgloszenie_produkt`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `produkt`
+--
+ALTER TABLE `produkt`
+  ADD CONSTRAINT `producentprodukt` FOREIGN KEY (`id_producenta`) REFERENCES `producent` (`id`);
+
+--
+-- Constraints for table `raport_zgloszenie`
+--
+ALTER TABLE `raport_zgloszenie`
+  ADD CONSTRAINT `raportid` FOREIGN KEY (`id_raportu`) REFERENCES `raport` (`id`),
+  ADD CONSTRAINT `zgloszenieid` FOREIGN KEY (`id_zgloszenia`) REFERENCES `zgloszenie` (`id`);
+
+--
+-- Constraints for table `wiadomosc`
+--
+ALTER TABLE `wiadomosc`
+  ADD CONSTRAINT `prac1wiadomosc` FOREIGN KEY (`id_prac1`) REFERENCES `pracownik` (`id`),
+  ADD CONSTRAINT `prac2wiadomosc` FOREIGN KEY (`id_prac2`) REFERENCES `pracownik` (`id`);
+
+--
+-- Constraints for table `zgloszenie`
+--
+ALTER TABLE `zgloszenie`
+  ADD CONSTRAINT `zgloszenieklient` FOREIGN KEY (`id_klienta`) REFERENCES `klient` (`id`),
+  ADD CONSTRAINT `zgloszeniepracownik` FOREIGN KEY (`id_prac`) REFERENCES `pracownik` (`id`);
+
+--
+-- Constraints for table `zgloszenie_produkt`
+--
+ALTER TABLE `zgloszenie_produkt`
+  ADD CONSTRAINT `produktid` FOREIGN KEY (`id_produktu`) REFERENCES `produkt` (`id`),
+  ADD CONSTRAINT `zgloszeniaid` FOREIGN KEY (`id_zgloszenia`) REFERENCES `zgloszenie` (`id`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
