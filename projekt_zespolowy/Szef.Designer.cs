@@ -70,6 +70,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Wypłać premię";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -121,6 +122,7 @@
             this.Name = "Szef";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Szef";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Szef_FormClosing);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

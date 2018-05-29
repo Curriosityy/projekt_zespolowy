@@ -232,6 +232,7 @@
             this.Name = "DodawanieKlienta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DodawanieKlienta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DodawanieKlienta_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

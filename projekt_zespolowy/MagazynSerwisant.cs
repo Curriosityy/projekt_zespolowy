@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace projekt_zespolowy
@@ -20,7 +13,7 @@ namespace projekt_zespolowy
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Serwisant ok = new Serwisant();
+            Serwisant ok = new Serwisant(int.Parse(Logowanie.access.Rows[0][1].ToString()));
             ok.Show();
         }
 
@@ -29,6 +22,11 @@ namespace projekt_zespolowy
             this.Hide();
             StanMagazynu st = new StanMagazynu();
             st.Show();
+        }
+
+        private void MagazynSerwisant_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

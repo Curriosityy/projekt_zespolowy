@@ -63,6 +63,7 @@
             this.Name = "WyświetlBraki";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WyświetlBraki";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WyświetlBraki_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

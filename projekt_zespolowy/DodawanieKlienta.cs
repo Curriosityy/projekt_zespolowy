@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace projekt_zespolowy
 {
@@ -21,7 +14,7 @@ namespace projekt_zespolowy
         private void exit_add_client_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Sekretarka sexit = new Sekretarka();
+            Sekretarka sexit = new Sekretarka(int.Parse(Logowanie.access.Rows[0][1].ToString()));
             sexit.Show();
         }
 
@@ -115,8 +108,13 @@ namespace projekt_zespolowy
             MessageBox.Show("Pomyślnie dodano klienta!", "Dodawanie klienta");
 
             this.Hide();
-            Sekretarka sexit = new Sekretarka();
+            Sekretarka sexit = new Sekretarka(int.Parse(Logowanie.access.Rows[0][1].ToString()));
             sexit.Show();
+        }
+
+        private void DodawanieKlienta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

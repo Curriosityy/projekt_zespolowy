@@ -82,11 +82,11 @@
     <Compile Include="MagazynSzef.Designer.cs">
       <DependentUpon>MagazynSzef.cs</DependentUpon>
     </Compile>
-    <Compile Include="message.cs">
+    <Compile Include="Odbierz wiadomosc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="message.Designer.cs">
-      <DependentUpon>message.cs</DependentUpon>
+    <Compile Include="Odbierz wiadomosc.Designer.cs">
+      <DependentUpon>Odbierz wiadomosc.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +113,12 @@
     </Compile>
     <Compile Include="Szef.Designer.cs">
       <DependentUpon>Szef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WyplacPremie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WyplacPremie.Designer.cs">
+      <DependentUpon>WyplacPremie.cs</DependentUpon>
     </Compile>
     <Compile Include="WyświetlBraki.cs">
       <SubType>Form</SubType>
@@ -144,8 +150,8 @@
     <EmbeddedResource Include="MagazynSzef.resx">
       <DependentUpon>MagazynSzef.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="message.resx">
-      <DependentUpon>message.cs</DependentUpon>
+    <EmbeddedResource Include="Odbierz wiadomosc.resx">
+      <DependentUpon>Odbierz wiadomosc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Szef.resx">
       <DependentUpon>Szef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WyplacPremie.resx">
+      <DependentUpon>WyplacPremie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WyświetlBraki.resx">
       <DependentUpon>WyświetlBraki.cs</DependentUpon>

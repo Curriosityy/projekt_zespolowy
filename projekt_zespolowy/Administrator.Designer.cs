@@ -85,6 +85,8 @@
             this.Name = "Administrator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Administrator_FormClosing);
+            this.Load += new System.EventHandler(this.Administrator_Load);
             this.ResumeLayout(false);
 
         }

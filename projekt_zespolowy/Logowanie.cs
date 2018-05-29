@@ -7,6 +7,9 @@ namespace projekt_zespolowy
 {
     public partial class Logowanie : Form
     {
+        public static DataTable access = new DataTable();
+        public static DataTable dt = new DataTable();
+
         public Logowanie()
         {
             InitializeComponent();
@@ -44,40 +47,39 @@ namespace projekt_zespolowy
             }
 
             MySqlDataAdapter log = new MySqlDataAdapter("SELECT Count(*) FROM pracownik WHERE login='" + textBox1.Text + "' AND haslo='" + textBox2.Text + "'", cnn);
-            DataTable dt = new DataTable();
+
             log.Fill(dt);
 
-            string SqlQuery = "SELECT uprawnienia FROM pracownik WHERE login='" + textBox1.Text.ToString() + "'";
+            string SqlQuery = "SELECT uprawnienia,id FROM pracownik WHERE login='" + textBox1.Text.ToString() + "'";
             MySqlDataAdapter ac = new MySqlDataAdapter(SqlQuery, cnn);
 
             if (dt.Rows[0][0].ToString() == "1")
             {
-                DataTable access = new DataTable();
                 ac.Fill(access);
 
                 if (access.Rows[0][0].ToString() == "3")
                 {
                     this.Hide();
-                    Szef s = new Szef();
+                    Szef s = new Szef(int.Parse(access.Rows[0][1].ToString()));
                     s.Show();
                 }
 
                 if (access.Rows[0][0].ToString() == "1")
                 {
                     this.Hide();
-                    Serwisant s1 = new Serwisant();
+                    Serwisant s1 = new Serwisant(int.Parse(access.Rows[0][1].ToString()));
                     s1.Show();
                 }
                 if (access.Rows[0][0].ToString() == "2")
                 {
                     this.Hide();
-                    Sekretarka s2 = new Sekretarka();
+                    Sekretarka s2 = new Sekretarka(int.Parse(access.Rows[0][1].ToString()));
                     s2.Show();
                 }
                 if (access.Rows[0][0].ToString() == "0")
                 {
                     this.Hide();
-                    Administrator s0 = new Administrator();
+                    Administrator s0 = new Administrator(int.Parse(access.Rows[0][1].ToString()));
                     s0.Show();
                 }
             }
@@ -90,6 +92,11 @@ namespace projekt_zespolowy
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Logowanie_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

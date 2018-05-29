@@ -96,6 +96,7 @@
             this.Name = "MagazynSzef";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MagazynSzef";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MagazynSzef_FormClosing);
             this.Load += new System.EventHandler(this.MagazynSzef_Load);
             this.ResumeLayout(false);
 

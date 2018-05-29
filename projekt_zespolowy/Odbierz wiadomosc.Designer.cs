@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(284, 161);
             this.Name = "message";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "message";
+            this.Text = "Skrzynka odbiorcza";
             this.ResumeLayout(false);
 
         }

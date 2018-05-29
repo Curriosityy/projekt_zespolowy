@@ -104,6 +104,7 @@
             this.Name = "Logowanie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel logowania";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Logowanie_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

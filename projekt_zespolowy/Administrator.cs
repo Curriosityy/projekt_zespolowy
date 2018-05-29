@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace projekt_zespolowy
 {
     public partial class Administrator : Form
     {
-        public Administrator()
+        public Administrator(int id)
         {
             InitializeComponent();
         }
@@ -22,6 +15,15 @@ namespace projekt_zespolowy
             this.Hide();
             Logowanie ok = new Logowanie();
             ok.Show();
+        }
+
+        private void Administrator_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void Administrator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

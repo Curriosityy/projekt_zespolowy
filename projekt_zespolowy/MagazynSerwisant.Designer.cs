@@ -82,7 +82,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "MagazynSerwisant";
-            this.Text = "MagazynSerwisant";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Magazyn serwisant";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MagazynSerwisant_FormClosing);
             this.ResumeLayout(false);
 
         }

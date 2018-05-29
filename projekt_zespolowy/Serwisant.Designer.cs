@@ -107,6 +107,7 @@
             this.Name = "Serwisant";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Serwisant";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Serwisant_FormClosing);
             this.ResumeLayout(false);
 
         }

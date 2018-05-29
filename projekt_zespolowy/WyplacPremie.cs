@@ -1,13 +1,22 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace projekt_zespolowy
 {
-    public partial class StanMagazynu : Form
+    public partial class WyplacPremie : Form
     {
-        public StanMagazynu()
+        public MySqlDataAdapter adpt;
+        public DataTable da;
+
+        public WyplacPremie()
         {
             InitializeComponent();
             loadTable();
@@ -22,16 +31,16 @@ namespace projekt_zespolowy
                 cnn = new MySqlConnection(connetionString);
                 cnn.Open();
 
-                MySqlCommand comm = new MySqlCommand("SELECT nazwa,opis,ilosc,cena,id_producenta FROM produkt", cnn);
-                MySqlDataAdapter adpt = new MySqlDataAdapter();
+                MySqlCommand comm = new MySqlCommand("SELECT login, pensja, premia FROM pracownik WHERE uprawnienia = 1 OR uprawnienia = 2", cnn);
+                adpt = new MySqlDataAdapter();
                 adpt.SelectCommand = comm;
-                DataTable dt = new DataTable();
-                adpt.Fill(dt);
+                da = new DataTable();
+                adpt.Fill(da);
                 BindingSource bSource = new BindingSource();
 
-                bSource.DataSource = dt;
+                bSource.DataSource = da;
                 dataGridView1.DataSource = bSource;
-                adpt.Update(dt);
+                adpt.Update(da);
 
                 //      MySqlDataAdapter adpt = new MySqlDataAdapter("SELECT * FROM produkt", cnn);
                 //      DataSet ds = new DataSet();
@@ -50,13 +59,8 @@ namespace projekt_zespolowy
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MagazynSzef ms = new MagazynSzef();
-            ms.Show();
-        }
-
-        private void StanMagazynu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
+            Szef s = new Szef(int.Parse(Logowanie.access.Rows[0][1].ToString()));
+            s.Show();
         }
     }
 }

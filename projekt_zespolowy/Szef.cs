@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace projekt_zespolowy
 {
     public partial class Szef : Form
     {
-        public Szef()
+        public Szef(int id)
         {
             InitializeComponent();
         }
@@ -36,6 +29,18 @@ namespace projekt_zespolowy
             this.Hide();
             message o = new message();
             o.Show();
+        }
+
+        private void Szef_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            WyplacPremie wp = new WyplacPremie();
+            wp.Show();
         }
     }
 }
