@@ -6,6 +6,7 @@ namespace projekt_zespolowy
     public partial class Serwisant : Form
     {
         private int idSerwisanta;
+
         public Serwisant(int id)
         {
             InitializeComponent();
@@ -36,6 +37,12 @@ namespace projekt_zespolowy
         {
             WyslijWiadomosc wyslijWiadomosc = new WyslijWiadomosc(idSerwisanta);
             wyslijWiadomosc.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OdbierzZgloszenie odbierzZgloszenie = new OdbierzZgloszenie(idSerwisanta);
+            odbierzZgloszenie.Show();
         }
     }
 }

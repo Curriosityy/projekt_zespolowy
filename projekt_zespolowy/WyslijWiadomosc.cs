@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+
 namespace projekt_zespolowy
 {
     public partial class WyslijWiadomosc : Form
     {
-
         private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=projekt;";
         private MySqlConnection cnn;
         private MySqlCommand com;
@@ -25,17 +25,19 @@ namespace projekt_zespolowy
         {
             InitializeComponent();
             idWysylajacego = id;
+            cnn = new MySqlConnection(connectionString);
         }
 
         private void RefreshList()
         {
             comboBox1.Items.Clear();
             szefowie.Clear();
+
             try
             {
                 cnn.Open();
                 //query = "Select id,login FROM pracownik WHERE id>2 AND ID != '" + id + "';";
-                query = "Select id,login FROM pracownik WHERE id>2;";
+                query = "Select id,login FROM pracownik WHERE uprawnienia=3;";
                 com = new MySqlCommand(query, cnn);
 
                 reader = com.ExecuteReader();
@@ -57,6 +59,7 @@ namespace projekt_zespolowy
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void WyslijWiadomosc_Load(object sender, EventArgs e)
         {
             RefreshList();
@@ -75,7 +78,7 @@ namespace projekt_zespolowy
                 {
                     cnn.Open();
 
-                    query = "INSERT INTO Wiadomosc(od,do,wiadomosc) VALUES('"+idWysylajacego+"','" + szefowie[comboBox1.SelectedIndex] + "','" + richTextBox1.Text + "');";
+                    query = "INSERT INTO Wiadomosc(od,do,wiadomosc) VALUES('" + idWysylajacego + "','" + szefowie[comboBox1.SelectedIndex] + "','" + richTextBox1.Text + "');";
 
                     com = new MySqlCommand(query, cnn);
 
@@ -94,7 +97,6 @@ namespace projekt_zespolowy
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
     }
 }
