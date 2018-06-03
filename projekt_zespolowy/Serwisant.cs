@@ -5,9 +5,12 @@ namespace projekt_zespolowy
 {
     public partial class Serwisant : Form
     {
+        private int idSerwisanta;
         public Serwisant(int id)
         {
             InitializeComponent();
+
+            idSerwisanta = id;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -27,6 +30,12 @@ namespace projekt_zespolowy
         private void Serwisant_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            WyslijWiadomosc wyslijWiadomosc = new WyslijWiadomosc(idSerwisanta);
+            wyslijWiadomosc.Show();
         }
     }
 }

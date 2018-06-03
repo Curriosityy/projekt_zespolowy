@@ -5,9 +5,11 @@ namespace projekt_zespolowy
 {
     public partial class Sekretarka : Form
     {
+        private int idSekretarki;
         public Sekretarka(int id)
         {
             InitializeComponent();
+            idSekretarki = id;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,6 +36,12 @@ namespace projekt_zespolowy
         private void Sekretarka_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            WyslijWiadomosc wyslijWiadomosc = new WyslijWiadomosc(idSekretarki);
+            wyslijWiadomosc.Show();
         }
     }
 }
