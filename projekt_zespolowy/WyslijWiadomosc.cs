@@ -78,7 +78,7 @@ namespace projekt_zespolowy
                 {
                     cnn.Open();
 
-                    query = "INSERT INTO Wiadomosc(od,do,wiadomosc) VALUES('" + idWysylajacego + "','" + szefowie[comboBox1.SelectedIndex] + "','" + richTextBox1.Text + "');";
+                    query = "INSERT INTO Wiadomosc(id_prac1,id_prac2,tresc) VALUES('" + idWysylajacego + "','" + szefowie[comboBox1.SelectedIndex] + "','" + richTextBox1.Text + "');";
 
                     com = new MySqlCommand(query, cnn);
 
@@ -92,6 +92,8 @@ namespace projekt_zespolowy
                     cnn.Close();
                     reader.Close();
                 }
+                MessageBox.Show("Wiadomość wysłana pomyślnie");
+                this.Close();
             }
         }
 

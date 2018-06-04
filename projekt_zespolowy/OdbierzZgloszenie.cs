@@ -103,6 +103,8 @@ namespace projekt_zespolowy
             {
                 MessageBox.Show(ex.Message);
             }
+            MessageBox.Show("Odebrano zgłoszenie");
+            RefreshList();
         }
     }
 }

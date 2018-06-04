@@ -79,6 +79,8 @@ namespace projekt_zespolowy
             {
                 MessageBox.Show(ex.Message);
             }
+            MessageBox.Show("Odebrano zgłoszenie");
+            RefreshList();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
