@@ -93,6 +93,12 @@
     <Compile Include="Logowanie.Designer.cs">
       <DependentUpon>Logowanie.cs</DependentUpon>
     </Compile>
+    <Compile Include="LokalizujZgloszenia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LokalizujZgloszenia.Designer.cs">
+      <DependentUpon>LokalizujZgloszenia.cs</DependentUpon>
+    </Compile>
     <Compile Include="MagazynSerwisant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logowanie.resx">
       <DependentUpon>Logowanie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LokalizujZgloszenia.resx">
+      <DependentUpon>LokalizujZgloszenia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MagazynSerwisant.resx">
       <DependentUpon>MagazynSerwisant.cs</DependentUpon>

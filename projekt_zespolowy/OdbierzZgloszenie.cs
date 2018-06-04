@@ -92,7 +92,7 @@ namespace projekt_zespolowy
                 for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
                 {
                     id = checkedListBox1.Items.IndexOf(checkedListBox1.CheckedItems[i]);
-                    query = "Update zgloszenia Set id_prac='" + idSerwisanta + "',status='1' Where id='" + idZgloszenia[id] + "';";
+                    query = "Update zgloszenie Set id_prac='" + idSerwisanta + "',status='1' Where id='" + idZgloszenia[id] + "';";
                     com = new MySqlCommand(query, cnn);
                     reader = com.ExecuteReader();
                     reader.Close();

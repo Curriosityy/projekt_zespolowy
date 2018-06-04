@@ -82,6 +82,7 @@ namespace projekt_zespolowy
                     Administrator s0 = new Administrator(int.Parse(access.Rows[0][1].ToString()));
                     s0.Show();
                 }
+                cnn.Close();
             }
             else
             {

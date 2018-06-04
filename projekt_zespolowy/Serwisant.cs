@@ -44,5 +44,11 @@ namespace projekt_zespolowy
             OdbierzZgloszenie odbierzZgloszenie = new OdbierzZgloszenie(idSerwisanta);
             odbierzZgloszenie.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LokalizujZgloszenia lokalizujZgloszenia = new LokalizujZgloszenia(idSerwisanta);
+            lokalizujZgloszenia.Show();
+        }
     }
 }

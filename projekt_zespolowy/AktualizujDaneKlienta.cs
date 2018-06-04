@@ -51,10 +51,10 @@ namespace projekt_zespolowy
                         listOfClient.Add(reader.GetInt32(0));
                         comboBox1.Items.Add(reader.GetString(1) + " " + reader.GetString(2));
                     }
-                    comboBox1.SelectedItem = comboBox1.Items[0];
                 }
                 reader.Close();
                 cnn.Close();
+                comboBox1.SelectedItem = comboBox1.Items[0];
             }
             catch (Exception ex)
             {
