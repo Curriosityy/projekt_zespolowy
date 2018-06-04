@@ -6,6 +6,7 @@ namespace projekt_zespolowy
     public partial class Sekretarka : Form
     {
         private int idSekretarki;
+
         public Sekretarka(int id)
         {
             InitializeComponent();
@@ -42,6 +43,10 @@ namespace projekt_zespolowy
         {
             WyslijWiadomosc wyslijWiadomosc = new WyslijWiadomosc(idSekretarki);
             wyslijWiadomosc.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
         }
     }
 }

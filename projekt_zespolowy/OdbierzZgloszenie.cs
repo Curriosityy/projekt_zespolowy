@@ -82,5 +82,27 @@ namespace projekt_zespolowy
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id;
+                cnn.Open();
+                for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
+                {
+                    id = checkedListBox1.Items.IndexOf(checkedListBox1.CheckedItems[i]);
+                    query = "Update zgloszenia Set id_prac='" + idSerwisanta + "',status='1' Where id='" + idZgloszenia[id] + "';";
+                    com = new MySqlCommand(query, cnn);
+                    reader = com.ExecuteReader();
+                    reader.Close();
+                }
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
