@@ -17,7 +17,7 @@ namespace projekt_zespolowy
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ZakonczZgloszenie zz = new ZakonczZgloszenie();
+            Zgłoszenia zz = new Zgłoszenia(idSerwisanta);
             zz.Show();
         }
 
@@ -49,6 +49,12 @@ namespace projekt_zespolowy
         {
             LokalizujZgloszenia lokalizujZgloszenia = new LokalizujZgloszenia(idSerwisanta);
             lokalizujZgloszenia.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            StanMagazynu s = new StanMagazynu();
+            s.Show();
         }
     }
 }

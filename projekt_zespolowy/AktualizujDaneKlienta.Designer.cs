@@ -241,7 +241,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AktualizujDaneKlienta";
-            this.Text = "AktualizujDaneKlienta";
             this.Load += new System.EventHandler(this.AktualizujDaneKlienta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

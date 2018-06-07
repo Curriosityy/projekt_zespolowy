@@ -16,7 +16,6 @@ namespace projekt_zespolowy
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             StanMagazynu sm = new StanMagazynu();
             sm.Show();
         }

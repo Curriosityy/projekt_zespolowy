@@ -11,37 +11,38 @@ using System.Windows.Forms;
 
 namespace projekt_zespolowy
 {
-      
-    public partial class WyplacPremie : Form
+    public partial class Zgłoszenia : Form
     {
-        public MySqlDataAdapter adpt;
-        public DataTable da;
+        private int id_odbier;
+        private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=projekt;";
 
-        public WyplacPremie()
+        public Zgłoszenia(int id)
         {
             InitializeComponent();
-            loadTable();
+            id_odbier = id;
+            loadTable(id_odbier);
+            MySqlConnection cnn = new MySqlConnection(connectionString);
         }
 
-        private void loadTable()
+        private void loadTable(int id)
         {
             try
             {
                 MySqlConnection cnn;
-                string connetionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=projekt;";
-                cnn = new MySqlConnection(connetionString);
+                cnn = new MySqlConnection(connectionString);
                 cnn.Open();
-
-                MySqlCommand comm = new MySqlCommand("SELECT login, pensja, premia FROM pracownik WHERE uprawnienia = 1 OR uprawnienia = 2", cnn);
-                adpt = new MySqlDataAdapter();
-                adpt.SelectCommand = comm;
-                da = new DataTable();
-                adpt.Fill(da);
+                // id_klienta = "SELECT "
+                // string SqlQuery ="SELECT imie, nazwisko FROM klient WHERE id='" + id_klienta + "'";
+                MySqlCommand comm = new MySqlCommand("SELECT id_klienta, opis FROM zgloszenie WHERE id_prac='" + id + "'", cnn);
+                MySqlDataAdapter adpty = new MySqlDataAdapter();
+                adpty.SelectCommand = comm;
+                DataTable dad = new DataTable();
+                adpty.Fill(dad);
                 BindingSource bSource = new BindingSource();
 
-                bSource.DataSource = da;
+                bSource.DataSource = dad;
                 dataGridView1.DataSource = bSource;
-                adpt.Update(da);
+                adpty.Update(dad);
 
                 //      MySqlDataAdapter adpt = new MySqlDataAdapter("SELECT * FROM produkt", cnn);
                 //      DataSet ds = new DataSet();
@@ -55,13 +56,6 @@ namespace projekt_zespolowy
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Szef s = new Szef(int.Parse(Logowanie.access.Rows[0][1].ToString()));
-            s.Show();
         }
     }
 }

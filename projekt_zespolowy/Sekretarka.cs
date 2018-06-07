@@ -47,6 +47,8 @@ namespace projekt_zespolowy
 
         private void button2_Click(object sender, EventArgs e)
         {
+            AktualizujDaneKlienta aktualizujDaneKlienta = new AktualizujDaneKlienta();
+            aktualizujDaneKlienta.Show();
         }
     }
 }

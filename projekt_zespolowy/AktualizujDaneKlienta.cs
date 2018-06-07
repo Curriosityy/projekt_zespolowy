@@ -168,7 +168,7 @@ namespace projekt_zespolowy
             {
                 cnn.Open();
                 //query = "Select id,login FROM pracownik WHERE id>2 AND ID != '" + id + "';";
-                query = "SELECT imie,nazwisko,tel,ulica,nr_domu,nr_lokalu,miejscowosc,kod FROM klient Where id=" + listOfClient[comboBox1.SelectedIndex] + "';";
+                query = "SELECT imie,nazwisko,tel,ulica,nr_domu,nr_lokalu,miejscowosc,kod FROM klient Where id='" + listOfClient[comboBox1.SelectedIndex] + "';";
                 com = new MySqlCommand(query, cnn);
 
                 reader = com.ExecuteReader();
