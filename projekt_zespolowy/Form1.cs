@@ -31,31 +31,81 @@ namespace projekt_zespolowy
                 MySqlConnection cnn;
                 cnn = new MySqlConnection(connectionString);
                 cnn.Open();
-                // id_klienta = "SELECT "
-                // string SqlQuery ="SELECT imie, nazwisko FROM klient WHERE id='" + id_klienta + "'";
-                MySqlCommand comm = new MySqlCommand("SELECT id_klienta, opis FROM zgloszenie WHERE id_prac='" + id + "'", cnn);
-                MySqlDataAdapter adpty = new MySqlDataAdapter();
-                adpty.SelectCommand = comm;
-                DataTable dad = new DataTable();
-                adpty.Fill(dad);
-                BindingSource bSource = new BindingSource();
 
-                bSource.DataSource = dad;
-                dataGridView1.DataSource = bSource;
-                adpty.Update(dad);
+                MySqlCommand comm = new MySqlCommand("SELECT zgloszenie.id,klient.imie,klient.nazwisko,zgloszenie.opis FROM klient INNER JOIN zgloszenie ON klient.id = zgloszenie.id_klienta  WHERE id_prac='" + id + "AND status=" + 0 + "'", cnn);
 
-                //      MySqlDataAdapter adpt = new MySqlDataAdapter("SELECT * FROM produkt", cnn);
-                //      DataSet ds = new DataSet();
-                //      adpt.Fill(ds, "stan");
-                //      dataGridView1.DataSource = ds.Tables["stan"];
-                //      Application.Run(new StanMagazynu());
+                MySqlDataReader reader = comm.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        listBox1.Items.Add(reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3));
+                    }
+                }
+                reader.Close();
+
                 cnn.Close();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            if (listBox1.SelectedItem != null)
+            {
+                label1.Visible = true;
+                label2.Visible = true;
+                textBox1.Visible = true;
+                textBox2.Visible = true;
+                button2.Visible = true;
+                ZakonczZgloszenie.ActiveForm.Height = 500;
+            }
+            else
+            {
+                MessageBox.Show("Proszę wybrać zgłoszenie!");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MySqlConnection cnn;
+                cnn = new MySqlConnection(connectionString);
+                cnn.Open();
+                //   int id_zgloszenia = int.Parse(listBox1.MultiColumn.ToString());
+                int id_zgloszenia = (int)listBox1.SelectedItem.ToString()[0];
+
+                MySqlCommand upadte_zgl = new MySqlCommand("UPDATE zgloszenie SET koszt=@koszt, opis=@opis, status=@status data2=@data2 WHERE id='" + id_zgloszenia + "'", cnn);
+                if (string.IsNullOrEmpty(textBox1.Text))
+                {
+                    MessageBox.Show("Proszę wprowadzić cenę!");
+                }
+                else
+                {
+                    upadte_zgl.Parameters.AddWithValue("@koszt", textBox1.Text);
+                }
+
+                if (string.IsNullOrEmpty(textBox2.Text))
+                {
+                    MessageBox.Show("Proszę wprowadzić opis!");
+                }
+                else
+                {
+                    upadte_zgl.Parameters.AddWithValue("@opis", textBox2.Text);
+                    upadte_zgl.Parameters.AddWithValue("@status", 1);
+                    upadte_zgl.Parameters.AddWithValue("@data2", DateTime.Now);
+                    MessageBox.Show("Pomyślnie zakończnono zgłoszenie!");
+                    this.Hide();
+                    Serwisant s1 = new Serwisant(int.Parse(Logowanie.access.Rows[0][1].ToString()));
+                    s1.Show();
+                }
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

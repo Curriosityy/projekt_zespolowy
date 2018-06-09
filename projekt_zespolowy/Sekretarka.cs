@@ -50,5 +50,10 @@ namespace projekt_zespolowy
             AktualizujDaneKlienta aktualizujDaneKlienta = new AktualizujDaneKlienta();
             aktualizujDaneKlienta.Show();
         }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
