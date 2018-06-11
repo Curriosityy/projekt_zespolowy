@@ -18,7 +18,6 @@ namespace projekt_zespolowy
 
         private void DodajZgłoszenie_FormClosing(object sender, FormClosingEventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -29,7 +29,6 @@ namespace projekt_zespolowy
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
             DodajZgłoszenie dz = new DodajZgłoszenie();
             dz.Show();
         }
@@ -53,7 +52,6 @@ namespace projekt_zespolowy
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-
         }
     }
 }

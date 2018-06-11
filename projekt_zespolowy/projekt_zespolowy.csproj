@@ -87,13 +87,12 @@
     <Compile Include="Administrator.Designer.cs">
       <DependentUpon>Administrator.cs</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="DodawanieProduktu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,7 +122,6 @@
     </Compile>
     <Compile Include="Klienci.Designer.cs">
       <DependentUpon>Klienci.cs</DependentUpon>
->>>>>>> Stashed changes
     </Compile>
     <Compile Include="Logowanie.cs">
       <SubType>Form</SubType>
@@ -235,10 +233,9 @@
     <EmbeddedResource Include="DodawanieKlienta.resx">
       <DependentUpon>DodawanieKlienta.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< Updated upstream
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="DodawanieProduktu.resx">
       <DependentUpon>DodawanieProduktu.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,7 +250,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Klienci.resx">
       <DependentUpon>Klienci.cs</DependentUpon>
->>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="Logowanie.resx">
       <DependentUpon>Logowanie.cs</DependentUpon>

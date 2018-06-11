@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< Updated upstream
+
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -125,97 +125,6 @@
             this.Text = "Serwisant";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Serwisant_FormClosing);
             this.ResumeLayout(false);
-=======
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
-			this.button3 = new System.Windows.Forms.Button();
-			this.button4 = new System.Windows.Forms.Button();
-			this.button5 = new System.Windows.Forms.Button();
-			this.SuspendLayout();
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(16, 55);
-			this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(149, 28);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "Lokalizuj zgłoszenie";
-			this.button1.UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this.button2.Location = new System.Drawing.Point(16, 91);
-			this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(149, 28);
-			this.button2.TabIndex = 1;
-			this.button2.Text = "Zakończ zgłoszenie";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
-			// 
-			// label1
-			// 
-			this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label1.Location = new System.Drawing.Point(16, 11);
-			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(163, 28);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "Serwisant";
-			// 
-			// button3
-			// 
-			this.button3.Location = new System.Drawing.Point(16, 128);
-			this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(149, 28);
-			this.button3.TabIndex = 3;
-			this.button3.Text = "Wyślij wiadomość";
-			this.button3.UseVisualStyleBackColor = true;
-			// 
-			// button4
-			// 
-			this.button4.Location = new System.Drawing.Point(16, 165);
-			this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(149, 28);
-			this.button4.TabIndex = 4;
-			this.button4.Text = "Magazyn";
-			this.button4.UseVisualStyleBackColor = true;
-			this.button4.Click += new System.EventHandler(this.button4_Click);
-			// 
-			// button5
-			// 
-			this.button5.Location = new System.Drawing.Point(17, 202);
-			this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.button5.Name = "button5";
-			this.button5.Size = new System.Drawing.Size(148, 28);
-			this.button5.TabIndex = 5;
-			this.button5.Text = "Wyloguj się";
-			this.button5.UseVisualStyleBackColor = true;
-			this.button5.Click += new System.EventHandler(this.button5_Click);
-			// 
-			// Serwisant
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(255, 254);
-			this.Controls.Add(this.button5);
-			this.Controls.Add(this.button4);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.Name = "Serwisant";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Serwisant";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Serwisant_FormClosing);
-			this.ResumeLayout(false);
->>>>>>> Stashed changes
 
         }
 

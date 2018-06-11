@@ -56,7 +56,6 @@ namespace projekt_zespolowy
 
         private void StanMagazynu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
         }
     }
 }
