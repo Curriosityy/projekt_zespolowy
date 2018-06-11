@@ -32,7 +32,7 @@ namespace projekt_zespolowy
                 cnn = new MySqlConnection(connectionString);
                 cnn.Open();
 
-                MySqlCommand comm = new MySqlCommand("SELECT zgloszenie.id,klient.imie,klient.nazwisko,zgloszenie.opis FROM klient INNER JOIN zgloszenie ON klient.id = zgloszenie.id_klienta  WHERE id_prac='" + id + "AND status=" + 0 + "'", cnn);
+                MySqlCommand comm = new MySqlCommand("SELECT zgloszenie.id,klient.imie,klient.nazwisko,zgloszenie.opis FROM klient INNER JOIN zgloszenie ON klient.id = zgloszenie.id_klienta  WHERE zgloszenie.id_prac='" + id + "' AND zgloszenie.status='" + 1 + "'", cnn);
 
                 MySqlDataReader reader = comm.ExecuteReader();
                 if (reader.HasRows)

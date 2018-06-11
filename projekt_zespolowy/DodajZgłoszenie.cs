@@ -63,9 +63,7 @@ namespace projekt_zespolowy
 
             cnn.Close();
 
-            this.Hide();
-            Sekretarka s1 = new Sekretarka(int.Parse(Logowanie.access.Rows[0][1].ToString()));
-            s1.Show();
+            this.Close();
         }
     }
 }
