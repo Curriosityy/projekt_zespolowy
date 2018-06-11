@@ -28,5 +28,12 @@ namespace projekt_zespolowy
         {
             System.Windows.Forms.Application.Exit();
         }
-    }
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			WyjmijCzesci wc = new WyjmijCzesci();
+			wc.Show();
+		}
+	}
 }

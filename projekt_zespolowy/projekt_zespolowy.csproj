@@ -87,11 +87,43 @@
     <Compile Include="Administrator.Designer.cs">
       <DependentUpon>Administrator.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+=======
+    <Compile Include="DodawanieProduktu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodawanieProduktu.Designer.cs">
+      <DependentUpon>DodawanieProduktu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OddajCzesci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OddajCzesci.Designer.cs">
+      <DependentUpon>OddajCzesci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Podglad raportu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Podglad raportu.Designer.cs">
+      <DependentUpon>Podglad raportu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pracownicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pracownicy.Designer.cs">
+      <DependentUpon>Pracownicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klienci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klienci.Designer.cs">
+      <DependentUpon>Klienci.cs</DependentUpon>
+>>>>>>> Stashed changes
     </Compile>
     <Compile Include="Logowanie.cs">
       <SubType>Form</SubType>
@@ -155,6 +187,18 @@
     <Compile Include="Szef.Designer.cs">
       <DependentUpon>Szef.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuwanieProduktu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuwanieProduktu.Designer.cs">
+      <DependentUpon>UsuwanieProduktu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WyjmijCzesci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WyjmijCzesci.Designer.cs">
+      <DependentUpon>WyjmijCzesci.cs</DependentUpon>
+    </Compile>
     <Compile Include="WyplacPremie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,8 +235,25 @@
     <EmbeddedResource Include="DodawanieKlienta.resx">
       <DependentUpon>DodawanieKlienta.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="DodawanieProduktu.resx">
+      <DependentUpon>DodawanieProduktu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OddajCzesci.resx">
+      <DependentUpon>OddajCzesci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Podglad raportu.resx">
+      <DependentUpon>Podglad raportu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pracownicy.resx">
+      <DependentUpon>Pracownicy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klienci.resx">
+      <DependentUpon>Klienci.cs</DependentUpon>
+>>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="Logowanie.resx">
       <DependentUpon>Logowanie.cs</DependentUpon>
@@ -232,6 +293,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Szef.resx">
       <DependentUpon>Szef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuwanieProduktu.resx">
+      <DependentUpon>UsuwanieProduktu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WyjmijCzesci.resx">
+      <DependentUpon>WyjmijCzesci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WyplacPremie.resx">
       <DependentUpon>WyplacPremie.cs</DependentUpon>

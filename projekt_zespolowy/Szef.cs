@@ -42,5 +42,12 @@ namespace projekt_zespolowy
             WyplacPremie wp = new WyplacPremie();
             wp.Show();
         }
-    }
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			Podglad_raportu pr = new Podglad_raportu();
+			pr.Show();
+		}
+	}
 }

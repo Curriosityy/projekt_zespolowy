@@ -25,5 +25,19 @@ namespace projekt_zespolowy
         {
             System.Windows.Forms.Application.Exit();
         }
-    }
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			Klienci k = new Klienci();
+			k.Show();
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			Pracownicy p = new Pracownicy();
+			p.Show();
+		}
+	}
 }
