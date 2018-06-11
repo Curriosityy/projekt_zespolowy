@@ -73,17 +73,16 @@ namespace projekt_zespolowy
                 MySqlConnection cnn;
                 cnn = new MySqlConnection(connectionString);
                 cnn.Open();
-                //   int id_zgloszenia = int.Parse(listBox1.MultiColumn.ToString());
-                int id_zgloszenia = (int)listBox1.SelectedItem.ToString()[0];
+                int id_zgloszenia = ((int)listBox1.SelectedItem.ToString()[0]) - 48;
 
-                MySqlCommand upadte_zgl = new MySqlCommand("UPDATE zgloszenie SET koszt=@koszt, opis=@opis, status=@status data2=@data2 WHERE id='" + id_zgloszenia + "'", cnn);
+                MySqlCommand update_zgl = new MySqlCommand("UPDATE zgloszenie SET koszt=@koszt,opis=@opis,status=@status,data2=@data2 WHERE id='" + id_zgloszenia + "'", cnn);
                 if (string.IsNullOrEmpty(textBox1.Text))
                 {
                     MessageBox.Show("Proszę wprowadzić cenę!");
                 }
                 else
                 {
-                    upadte_zgl.Parameters.AddWithValue("@koszt", textBox1.Text);
+                    update_zgl.Parameters.AddWithValue("@koszt", textBox1.Text);
                 }
 
                 if (string.IsNullOrEmpty(textBox2.Text))
@@ -92,14 +91,16 @@ namespace projekt_zespolowy
                 }
                 else
                 {
-                    upadte_zgl.Parameters.AddWithValue("@opis", textBox2.Text);
-                    upadte_zgl.Parameters.AddWithValue("@status", 1);
-                    upadte_zgl.Parameters.AddWithValue("@data2", DateTime.Now);
+                    update_zgl.Parameters.AddWithValue("@opis", textBox2.Text);
+                    update_zgl.Parameters.AddWithValue("@status", 2);
+                    update_zgl.Parameters.AddWithValue("@data2", DateTime.Now);
+                    update_zgl.ExecuteNonQuery();
                     MessageBox.Show("Pomyślnie zakończnono zgłoszenie!");
                     this.Hide();
                     Serwisant s1 = new Serwisant(int.Parse(Logowanie.access.Rows[0][1].ToString()));
                     s1.Show();
                 }
+
                 cnn.Close();
             }
             catch (Exception ex)
