@@ -116,5 +116,10 @@ namespace projekt_zespolowy
         {
             System.Windows.Forms.Application.Exit();
         }
-    }
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

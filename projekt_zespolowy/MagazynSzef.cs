@@ -38,5 +38,19 @@ namespace projekt_zespolowy
         {
             System.Windows.Forms.Application.Exit();
         }
-    }
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			DodawanieProduktu dp = new DodawanieProduktu();
+			dp.Show();
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			UsuwanieProduktu up = new UsuwanieProduktu();
+			up.Show();
+		}
+	}
 }

@@ -33,6 +33,7 @@ namespace projekt_zespolowy
             System.Windows.Forms.Application.Exit();
         }
 
+<<<<<<< Updated upstream
         private void button3_Click(object sender, EventArgs e)
         {
             WyslijWiadomosc wyslijWiadomosc = new WyslijWiadomosc(idSerwisanta);
@@ -57,4 +58,13 @@ namespace projekt_zespolowy
             s.Show();
         }
     }
+=======
+		private void button4_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			MagazynSerwisant ms = new MagazynSerwisant();
+			ms.Show();
+		}
+	}
+>>>>>>> Stashed changes
 }
