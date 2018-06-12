@@ -13,6 +13,8 @@ namespace projekt_zespolowy
 {
     public partial class message : Form
     {
+        public int idMessage;
+
         public message()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace projekt_zespolowy
             cnn = new MySqlConnection(connetionString);
             cnn.Open();
 
-            MySqlCommand comm = new MySqlCommand("SELECT pracownik.login,wiadomosc.tresc FROM pracownik INNER JOIN wiadomosc ON pracownik.id=wiadomosc.id_prac1", cnn);
+            MySqlCommand comm = new MySqlCommand("SELECT wiadomosc.id,pracownik.login,wiadomosc.tresc FROM pracownik INNER JOIN wiadomosc ON pracownik.id=wiadomosc.id_prac1", cnn);
             MySqlDataAdapter adpt = new MySqlDataAdapter();
             adpt.SelectCommand = comm;
             DataTable dt = new DataTable();
@@ -40,25 +42,38 @@ namespace projekt_zespolowy
             cnn.Close();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+
+                idMessage = int.Parse(Convert.ToString(selectedRow.Cells["id"].Value));
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //for (int i = dataGridView1.Rows.Count - 1; i >= 0; i++)
-            //{
-            //    bool delete = (bool)dataGridView1.Rows[i].Cells[1].Value;
-            //    if (delete == true)
-            //    {
-            //        MySqlCommand del = new MySqlCommand("DELETE FROM wiadomosc WHERE id='" + i + "'");
-            //        MySqlDataReader reader = del.ExecuteReader();
-            //    }
-            //}
-        }
+            try
+            {
+                MySqlConnection cnn;
+                string connetionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=projekt;";
+                cnn = new MySqlConnection(connetionString);
+                cnn.Open();
 
-        private void button2_Click(object sender, EventArgs e)
-        {
+                MySqlCommand deleteMessage = new MySqlCommand("DELETE FROM wiadomosc WHERE id='" + idMessage + "'", cnn);
+                deleteMessage.ExecuteNonQuery();
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            this.Hide();
+            message m1 = new message();
+            m1.Show();
         }
     }
 }
